@@ -22,14 +22,22 @@ public class Calendar {
 	public static void main(String[] args) {		
 		Scanner scanner = new Scanner(System.in);
 		Calendar cal = new Calendar();
-		System.out.println("Enter Month : ");
-		int month = scanner.nextInt();
 		
-		int[] maxDays = {31,28,31,30,31,30,31,31,30,31,30,31};
 		
-		System.out.printf("%d month have %d days \n\n",month, cal.getMaxDaysOfMonth(month));
-		
-		cal.printSampleCalendar();
+		System.out.println("Enter this repeat number :");
+		int maxnum = scanner.nextInt();
+		while(true) {
+			System.out.println("Enter Month : ");
+			int month = scanner.nextInt();
+			
+			System.out.printf("%d month have %d days \n\n",month, cal.getMaxDaysOfMonth(month));
+			
+			cal.printSampleCalendar();
+			maxnum--;
+			if(maxnum==0) {
+				break;
+			}
+		}
 		scanner.close();
 	}
 
