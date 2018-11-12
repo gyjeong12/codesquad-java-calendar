@@ -1,5 +1,7 @@
 package com.javalec.ex;
 
+import java.util.Scanner;
+
 public class Calendar {
 
 	public static void main(String[] args) {
@@ -10,6 +12,14 @@ public class Calendar {
 		System.out.println("15  16  17   18  19  20  21");
 		System.out.println("22  23  24   25  26  27  28");
 		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter Month : ");
+		int month = scanner.nextInt();
+		
+		int[] maxDays = {31,28,31,30,31,30,31,31,30,31,30,31};
+		
+		System.out.printf("%d month have %d days \n",month, maxDays[month-1]);
+		scanner.close();
 	}
 
 }
