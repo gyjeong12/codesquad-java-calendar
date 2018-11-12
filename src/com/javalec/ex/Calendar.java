@@ -19,24 +19,27 @@ public class Calendar {
 		System.out.println("22  23  24   25  26  27  28");
 	}
 
-	public static void main(String[] args) {		
+	public static void main(String[] args) {	
+		
+		String PROMPT = "cal> ";
 		Scanner scanner = new Scanner(System.in);
 		Calendar cal = new Calendar();
 		
 		
 		System.out.println("Enter this repeat number :");
-		int maxnum = scanner.nextInt();
+		int month = 0;
 		while(true) {
 			System.out.println("Enter Month : ");
-			int month = scanner.nextInt();
-			
+			System.out.println(PROMPT);
+			month = scanner.nextInt();
+			if(month == -1) {
+				break;
+			}else if(month >12) {
+				continue;
+			}
 			System.out.printf("%d month have %d days \n\n",month, cal.getMaxDaysOfMonth(month));
 			
 			cal.printSampleCalendar();
-			maxnum--;
-			if(maxnum==0) {
-				break;
-			}
 		}
 		scanner.close();
 	}
